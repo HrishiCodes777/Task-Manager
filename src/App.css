@@ -1,38 +1,147 @@
-.App {
+:root {
+  --primary-bg-color: #333;
+  --secondary-bg-color: #424141;
+  --text-color: #fff;
+  --link-color: #fff;
+  --hover-transform: translateY(-5px);
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+  background: var(--primary-bg-color);
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link{
+  padding: 20px;
+}
+
+.nav-link a{
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.home {
   text-align: center;
+  padding: 50px;
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-button {
+  background-color: var(--link-color);
+  color: var(--primary-bg-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+.home-button:hover {
+  background-color: #555;
+  color: var(--link-color);
+}
+
+.task-form-container {
+  background-color: var(--primary-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.task-form {
   display: flex;
   flex-direction: column;
+}
+
+.task-form input[type="text"],
+.task-form textarea,
+.task-form input[type="date"],
+.task-form select {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 5px;
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+}
+
+.task-form textarea {
+  resize: vertical;
+}
+
+.task-form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-form label {
+  color: var(--text-color);
+  margin-right: 10px;
+}
+
+.task-form button {
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.task-form button:hover {
+  transform: var(--hover-transform);
+}
+
+.date-input,
+.priority-select {
+  margin: 10px 0;
+}
+
+.date-input {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.date-input label {
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.priority-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure there is space between elements */
+}
+
+.priority-select label {
+  margin-right: 10px;
+}
+
+/* Add a wrapper for status and priority to align them */
+.status-priority-wrapper {
+  display: flex;
+  justify-content: space-between; /* Distribute space evenly */
+  align-items: center;
+  margin: 10px 0;
 }
