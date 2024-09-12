@@ -22,9 +22,21 @@ export const TaskProvider = ({ children }) => {
         setTasks((prevTasks) => [...prevTasks, newTask]);
     }
 
+    //Updating Task Status
+    const toggleTaskCompletion = (taskId) => {
+        setTasks((prevTasks) =>
+          prevTasks.map(task =>
+            task.id === taskId ? { ...task, status: !task.status } : task
+          )
+        );
+    };
 
+    //Deleting Task
+    const deleteTask = (taskId) => {
+        setTasks(prevTasks => prevTasks.filter(task => task.id!== taskId));
+    }
     return(
-        <TaskContext.Provider value={{ tasks, addTask }}>
+        <TaskContext.Provider value={{ tasks, addTask,toggleTaskCompletion,deleteTask }}>
             {children}
         </TaskContext.Provider>
     )
