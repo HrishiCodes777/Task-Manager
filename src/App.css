@@ -91,10 +91,6 @@
   resize: vertical;
 }
 
-.task-form input[type="checkbox"] {
-  margin-right: 10px;
-}
-
 .task-form label {
   color: var(--text-color);
   margin-right: 10px;
@@ -131,17 +127,79 @@
 .priority-select {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensure there is space between elements */
+  justify-content: space-between; 
 }
 
 .priority-select label {
   margin-right: 10px;
 }
 
-/* Add a wrapper for status and priority to align them */
 .status-priority-wrapper {
   display: flex;
-  justify-content: space-between; /* Distribute space evenly */
+  justify-content: space-between; 
   align-items: center;
   margin: 10px 0;
+}
+
+.task-list-container {
+  padding: 20px;
+}
+
+.task-list {
+  display: grid;
+  gap: 20px;
+}
+
+/* Task Item Styles */
+.task-item {
+  background: var(--primary-bg-color);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.task-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.task-description {
+  margin-bottom: 10px;
+}
+
+.task-details {
+  font-size: 0.9em;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.task-action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+
+.complete-btn {
+  background-color: #28a745; 
+  color: white;
+}
+
+.pending-btn{
+  background-color: #eed202;
+  color: black;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.view-tasks-container h1 {
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
 }
